@@ -3,8 +3,31 @@
     <mat-card-header>
       <h2 class="mx-auto">When did I start my ring ?</h2>
     </mat-card-header>
-    <mat-card-content>
-      <p>some content…</p>
+    <mat-card-content class="mt-3 col-12 col-sm-8 mx-auto">
+      <div class="d-flex">
+        <h5 class="mr-2 my-auto">Took :</h5>
+        <div class="d-flex justify-content-around col">
+          <button mat-raised-button color="accent" (click)="addRing();" type="button">Today</button>
+          <button mat-stroked-button color="accent" (click)="open = !open">Another day</button>
+        </div>
+      </div>
+      <div *ngIf="open">
+        <form [formGroup]="ringForm" (ngSubmit)="onSubmit()">
+          <mat-form-field class="example-full-width">
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <button mat-stroked-button color="accent" type="submit">Go !</button>
+        </form>
+      </div>
+      <hr>
+      <div class="mt-3">
+        <h5>
+          By having taken your ring on <b class="text-danger">{{rings[0]?.createdAt | date: 'fullDate'}}</b>,
+          you will have to change it by another one on <b class="text-danger" *ngIf="newDate">{{newDate | date: 'fullDate'}}</b>
+        </h5>
+      </div>
     </mat-card-content>
   </mat-card>
 </section>
