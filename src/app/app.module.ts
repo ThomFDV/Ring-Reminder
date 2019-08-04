@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatIconModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatIconModule, MatToolbarModule} from '@angular/material';
+import { DateViewComponent } from './core/components/date-view/date-view.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DateViewComponent
   ],
   imports: [
     BrowserModule,
@@ -16,7 +18,8 @@ import {MatButtonModule, MatIconModule, MatToolbarModule} from '@angular/materia
     BrowserAnimationsModule,
     MatButtonModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
