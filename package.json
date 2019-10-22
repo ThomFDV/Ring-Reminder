@@ -2,6 +2,7 @@
   "name": "ring-reminder",
   "version": "0.0.0",
   "scripts": {
+    "server": "json-server src/assets/db.json",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
