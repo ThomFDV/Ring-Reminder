@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
 })
 export class DateService {
 
-    private url = 'http://5daf64b2f2946f001481d76e.mockapi.io/ring';
+    private url = 'https://5daf64b2f2946f001481d76e.mockapi.io/ring';
 
     constructor(private http: HttpClient) { }
 
